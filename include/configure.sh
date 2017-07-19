@@ -159,6 +159,9 @@ default username:password is [$USERNAMEPWD:$USERNAMEPWD]
 ISSUE
 fi
 
+echo -e "${GREENBOLD}Configuring bluetooth...${RST}" >&1 >&2
+install -m 644 patches/btmain.conf "$ROOTFS/etc/bluetooth/main.conf"
+
 echo -e "${GREENBOLD}Configuring network...${RST}" >&1 >&2
 install -m 644 patches/network-interfaces "$ROOTFS/etc/network/interfaces"
 install -m 644 patches/hosts "$ROOTFS/etc/hosts"
